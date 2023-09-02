@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Topic from "../components/Topic.astro";
+
+const topics = ["PHP", "Python", "Rust", "TypeScript"];
 ---
 
 <Layout title="Topic Voting - Brenelz Online Meetup">
@@ -11,9 +13,7 @@ import Topic from "../components/Topic.astro";
       Click on a topic to vote below. You must <a href="#">sign in</a> to vote.
     </p>
     <ul role="list" class="topic-grid">
-      <Topic title="PHP" />
-      <Topic title="Python" />
-      <Topic title="Rust" />
+      {topics.map((topic) => <Topic title={topic} />)}
     </ul>
   </main>
 </Layout>
