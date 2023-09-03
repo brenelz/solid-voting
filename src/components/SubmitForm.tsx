@@ -1,4 +1,5 @@
 import { createResource, createSignal } from "solid-js";
+import styles from "./SubmitForm.module.scss";
 
 type SubmitFormProps = {
     title: string;
@@ -24,7 +25,7 @@ export const SubmitForm = (props: SubmitFormProps) => {
     }
 
     return (
-        <form onSubmit={submit}>
+        <form class={styles.submitForm} onSubmit={submit}>
             <input type="hidden" name="title" value={props.title} />
             <button type="submit" classList={{ voted: !!response.latest }}>
                 <h2>
